@@ -97,12 +97,12 @@ html(class="no-js", lang="en", ng-app="carlipa.nissan.CarSpecAdmin")
           section
             p #[i.fa.fa-arrow-right] DRY Gulp "Channel" example
             pre: code.js.
-              return function ChannelFactory() {
+              module.exports = function ChannelFactory() {
                 // Returns a combination of transforms streams
                 // that can be easily reused in any gulp task
                 return require('stream-combiner')(
                   gulpif('**/*.less', less()),
-                  gulpif('**/*.sass', sass()),
+                  gulpif('**/*.{sass,scss}', sass()),
                   autoprefixer('last 1 version'),
                   gulp.dest(src.tmp)
                 );
