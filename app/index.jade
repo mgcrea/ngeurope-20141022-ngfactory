@@ -47,14 +47,14 @@ html(class="no-js", lang="en", ng-app="carlipa.nissan.CarSpecAdmin")
             #[br] - Do you like maintaining your grunt and gulp files for your many projects over time ?
             #[br] - We don't, and that's why we settled together to imagine the perfect development workflow companion to help us ship and maintain projects over time.
             #[br] - Today we'd like to present to you ng-factory which is an upgradable development workflow library built on to of Gulp and focused angularJS components and applications.
-          section
-            h3 Focused on best practices
-            p #[i.fa.fa-arrow-right] Developement
-            p #[i.fa.fa-arrow-right] Building
-            p #[i.fa.fa-arrow-right] Documentation
-            p #[i.fa.fa-arrow-right] Publication
-            aside.notes.
-              #[br] - ng-factory is focused on best practices and covers the whole development lifecycle : Developement, Build, Documentation, and Publication.
+        section
+          h3 Focused on best practices
+          p #[i.fa.fa-arrow-right] Developement
+          p #[i.fa.fa-arrow-right] Building
+          p #[i.fa.fa-arrow-right] Documentation
+          p #[i.fa.fa-arrow-right] Publication
+          aside.notes.
+            #[br] - ng-factory is focused on best practices and covers the whole development lifecycle : Developement, Build, Documentation, and Publication.
 
         section
           //- section
@@ -73,7 +73,8 @@ html(class="no-js", lang="en", ng-app="carlipa.nissan.CarSpecAdmin")
           section
             h2 #[i.fa.fa-question] What can we do?
             aside.notes.
-              #[br] - So where should we start? The main goal is to be more productive, and we want you to easily upgrade your workflow in a safe way.
+              #[br] - So where should we start? The main goal is to be more productive, and to maintin a high-quality working worflow.
+              #[br] - The key is really to abstract and easily upgrade your workflow in safe way
           section
             p #[i.fa.fa-filter] Reduce your gulpfile scope
             p #[i.fa.fa-star] Keep only what's specific to your app
@@ -81,13 +82,15 @@ html(class="no-js", lang="en", ng-app="carlipa.nissan.CarSpecAdmin")
               #[br] - So for us, the first thing to do to address that was to really reduce the size of your Gulpfile.
               #[br] - Abstracting away what was clearly not specific to your application or component.
               #[br] - Indeed gulp is a really new ecosystem, and it does evolve at a very high pace.
-              #[br] - Modules get deprecated, with new ones replacing them. So Keeping everything really up to date can really be time-consuming, even if you’ve started with a good yeoman generator.
+              #[br] - Modules get deprecated, with new ones replacing them. Keeping everything really up-to-date can really be time-consuming, even if you’ve started with a good yeoman generator.
+              #[br] - And in the end you have dozens of projects that are all using their unique subset of gulp tasks, generated at some point in time, and hand-tweaked after that.
+              #[br] - ngFactory really tries to solve this issue...
           section
             p #[i.fa.fa-cogs] To Provide pre-defined tasks
             p #[i.fa.fa-arrow-right] ngFactory relies on reusable channel factories...
             p #[i.fa.fa-arrow-right] ...returning combined transform streams!
             aside.notes.
-              #[br] - The first idea we had was to provide generic tasks in an external module that could be required by your gulpFile.
+              #[br] - ... And the first idea we had was to provide generic tasks in an external module that could be required by your gulpFile.
               #[br] - But gulp tasks are quite monolithic and too hard to reuse, at least with Gulp’s current orchestrator.
               #[br] - We needed way more flexibility and had to find something else, and that’s why we came up with: combined transform stream factories, and we called them gulp channels.
           section
