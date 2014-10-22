@@ -45,23 +45,10 @@ html(class="no-js", lang="en", ng-app="carlipa.nissan.CarSpecAdmin")
           aside.notes.
             #[br] - Have you ever noticed that we're all developers and we all - use - differents - workflows ?
             #[br] - Do you like maintaining your grunt and gulp files for your many projects over time ?
-        section
+            #[br] - We don't, and that's why we settled together to imagine the perfect development workflow companion to help us ship and maintain projects over time.
+            #[br] - Today we'd like to present to you ng-factory which is an upgradable development workflow library built on to of Gulp and focused angularJS components and applications.
           section
-            h2 #[i.fa.fa-question] Why...
-          section
-            h3 Buildtools...
-            p #[i.fa.fa-clock-o] Take too much of your time
-            p #[i.fa.fa-arrow-up] Are a pain to manage
-            aside.notes.
-              #[br] - We don't, and that's why we settled together to imagine the perfect development workflow companion to help us ship and maintain projects over time.
-          section
-            h3 Our goal is...
-            p #[i.fa.fa-arrow-right] To be more than a generator!
-            p #[i.fa.fa-arrow-right] Handle both application &amp; components worflows
-            aside.notes.
-              #[br] - Today we'd like to present to you ng-factory which is an upgradable development workflow library focused angularJS components and applications.
-          section
-            h3 The scope, an utility-belt for all your project lifecycle
+            h3 Focused on best practices
             p #[i.fa.fa-arrow-right] Developement
             p #[i.fa.fa-arrow-right] Building
             p #[i.fa.fa-arrow-right] Documentation
@@ -70,37 +57,37 @@ html(class="no-js", lang="en", ng-app="carlipa.nissan.CarSpecAdmin")
               #[br] - ng-factory is focused on best practices and covers the whole development lifecycle : Developement, Build, Documentation, and Publication.
 
         section
+          //- section
+          //-   h2 #[i.fa.fa-question] Gulp-centric plugin
+          //-   aside.notes.
+          //-     #[br] - the whole project is built on top of Gulp.
+          //-     #[br] - And we really like gulp, because when you're working on your gulpfile, your now learning NodeJS streams, grunt-specific configuration.
+          //- section
+          //-   h3 Gulp...
+          //-   p #[i.fa.fa-github] Is evolving at a very high pace
+          //-   p #[i.fa.fa-arrow-right] Upgrading is hard, it takes time
+          //-   p #[i.fa.fa-arrow-right] Migrating is risky, it might break
+          //-   aside.notes.
+          //-     #[br] - In the end you have dozens of projects that are all using their unique subset of gulp tasks, generated at some point in time, and hand-tweaked after that.
+          //-     #[br] = And you really can't take the risk of migrating everything, because there is a high probability of breaking your build. And you've got actual work to do on your project!
           section
-            h2 #[i.fa.fa-question] Gulp
+            h3 What can we do?
+            p #[i.fa.fa-filter] Reduce your gulpfile scope
+            p #[i.fa.fa-star] Keep only what's specific to your app
             aside.notes.
-              #[br] - So, the whole project is really built on top of Gulp.
-              #[br] - Having switched from Grunt to Gulp in the past year, I really enjoyed writing my build tool in actual JS.
-              #[br] - Because, When I'm working on my gulpfile, I'm now learning NodeJS streams while I was previously only mastering grunt-specific configuration.
-          section
-            h3 Gulp...
-            p #[i.fa.fa-github] Is evolving at a very high pace
-            p #[i.fa.fa-arrow-right] Upgrading is hard, it takes time
-            p #[i.fa.fa-arrow-right] Migrating is risky, it might break
-            aside.notes.
-              #[br] - But Gulp has it's issues. First, it is a really new ecosystem, and it does evolve at a very high pace.
-              #[br] - Modules get deprecated, with new ones replacing them. So Keeping everything really up to date can really be time-consuming, even if you’ve started with a good yeoman generator.
-              #[br] - In the end you have dozens of projects that are all using their unique subset of gulp tasks, generated at some point in time, and hand-tweaked after that.
-              #[br] = And you really can't take the risk of migrating everything, because there is a high probability of breaking your build. And you've got actual work to do on your project!
-          section
-            h3 The Gulpfile:
-            p #[i.fa.fa-filter] Reduce the scope
-            p #[i.fa.fa-star] Keeping only what's specific
-            aside.notes.
-              #[br] - So where should we start? The main goal was to really reduce the size of our gulpfiles.
+              #[br] - So where should we start? The main goal is to be more productive, and we want you to easily upgrade your workflow in a safe way.
+              #[br] - So for us, the first thing to do to address that was to really reduce the size of your Gulpfile.
               #[br] - Abstracting away what was clearly not specific to your application or component.
+              #[br] - Indeed gulp is a really new ecosystem, and it does evolve at a very high pace.
+              #[br] - Modules get deprecated, with new ones replacing them. So Keeping everything really up to date can really be time-consuming, even if you’ve started with a good yeoman generator.
           section
             p #[i.fa.fa-cogs] To Provide pre-defined tasks
             p #[i.fa.fa-arrow-right] ngFactory relies on reusable channel factories...
             p #[i.fa.fa-arrow-right] ...returning combined transform streams!
             aside.notes.
-              #[br] - So the first idea we had was to provide generic tasks in an external module that could be required by your gulpFile.
+              #[br] - The first idea we had was to provide generic tasks in an external module that could be required by your gulpFile.
               #[br] - But gulp tasks are quite monolithic and too hard to reuse, at least with Gulp’s current orchestrator.
-              #[br] - We needed way more flexibility and had to find something else, and that’s why we came up with: combined transform stream factories, what we call, gulp channels!
+              #[br] - We needed way more flexibility and had to find something else, and that’s why we came up with: combined transform stream factories
           section
             p #[i.fa.fa-arrow-right] Channel example (index/src)
             pre: code.js.
@@ -117,21 +104,21 @@ html(class="no-js", lang="en", ng-app="carlipa.nissan.CarSpecAdmin")
             aside.notes.
               #[br] - Here is an example of a factory that returns a combination of transform streams using stream-combiner
               #[br] - What's really great about it, it that we're free to reuse this channel anywhere we want.
-              #[br] - For instance, to build your components styles, or when we are compiling your index file, for your docs or an app.
+              #[br] - For instance, to build your components styles, or when we are compiling your index file, for your components docs or an app.
               #[br] - Being able to treat theses channels as small reusable modules really helped us achieve something that's generic enough and most importantly easy to maitain!
 
         section
           section
             h2 #[i.fa.fa-refresh] Documentation &amp; Publication
             aside.notes.
-              There is a big need
+              Generate README.md &amp; Documentation (living)
           section
-            h3 Generate README.md &amp; Documentation (living)
-          section
-            h3 Documentation
+            h3 Documentation (readme+docs)
             p #[i.fa.fa-arrow-right] ngDoc parser/formatter
             p #[i.fa.fa-arrow-right] markdown
             p #[i.fa.fa-arrow-right] nunjucks
+            aside.notes.
+              Generate README.md &amp; Documentation
           section
             h3 Publication
             p #[i.fa.fa-arrow-right] dedicated orphan release branches
