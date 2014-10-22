@@ -71,11 +71,13 @@ html(class="no-js", lang="en", ng-app="carlipa.nissan.CarSpecAdmin")
           //-     #[br] - In the end you have dozens of projects that are all using their unique subset of gulp tasks, generated at some point in time, and hand-tweaked after that.
           //-     #[br] = And you really can't take the risk of migrating everything, because there is a high probability of breaking your build. And you've got actual work to do on your project!
           section
-            h3 What can we do?
+            h2 #[i.fa.fa-question] What can we do?
+            aside.notes.
+              #[br] - So where should we start? The main goal is to be more productive, and we want you to easily upgrade your workflow in a safe way.
+          section
             p #[i.fa.fa-filter] Reduce your gulpfile scope
             p #[i.fa.fa-star] Keep only what's specific to your app
             aside.notes.
-              #[br] - So where should we start? The main goal is to be more productive, and we want you to easily upgrade your workflow in a safe way.
               #[br] - So for us, the first thing to do to address that was to really reduce the size of your Gulpfile.
               #[br] - Abstracting away what was clearly not specific to your application or component.
               #[br] - Indeed gulp is a really new ecosystem, and it does evolve at a very high pace.
@@ -87,9 +89,9 @@ html(class="no-js", lang="en", ng-app="carlipa.nissan.CarSpecAdmin")
             aside.notes.
               #[br] - The first idea we had was to provide generic tasks in an external module that could be required by your gulpFile.
               #[br] - But gulp tasks are quite monolithic and too hard to reuse, at least with Gulp’s current orchestrator.
-              #[br] - We needed way more flexibility and had to find something else, and that’s why we came up with: combined transform stream factories
+              #[br] - We needed way more flexibility and had to find something else, and that’s why we came up with: combined transform stream factories, and we called them gulp channels.
           section
-            p #[i.fa.fa-arrow-right] Channel example (index/src)
+            p #[i.fa.fa-arrow-right] DRY Gulp "Channel" example
             pre: code.js.
               return function ChannelFactory() {
                 // Returns a combination of transforms streams
@@ -102,10 +104,10 @@ html(class="no-js", lang="en", ng-app="carlipa.nissan.CarSpecAdmin")
                 );
               };
             aside.notes.
-              #[br] - Here is an example of a factory that returns a combination of transform streams using stream-combiner
-              #[br] - What's really great about it, it that we're free to reuse this channel anywhere we want.
-              #[br] - For instance, to build your components styles, or when we are compiling your index file, for your components docs or an app.
-              #[br] - Being able to treat theses channels as small reusable modules really helped us achieve something that's generic enough and most importantly easy to maitain!
+              #[br] - Here is an example of a factory using stream-combiner that returns a reusable series transform streams
+              #[br] - What's really great about it, it that we can easily reuse this channel anywhere in our workflow.
+              #[br] - For instance, to build your styles, whether it's for your components, application or documention.
+              #[br] - Finally, Having these reusable channels really helped us achieve something that's DRY and most importantly easy to maintain!
 
         section
           section
